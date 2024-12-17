@@ -5,6 +5,9 @@ class ListNode:
     def __init__(self, val=0, next=None) -> None:
         self.val = val
         self.next = next
+
+
+class Solution:
     def solution(self, head: Optional[ListNode]) -> None:
         slow, fast = head, head.next
         while fast and fast.next:
@@ -19,7 +22,7 @@ class ListNode:
             second.next = prev
             prev = second
             second = tmp
-        
+
         # merge two halfs
         first, second = head, prev
         while second:
